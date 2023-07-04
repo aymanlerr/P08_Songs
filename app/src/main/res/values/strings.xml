@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">P08_Songs</string>
+    <string name="songTitle">Song Title</string>
+    <string name="enterSong">Enter song title here</string>
+    <string name="singer">Singers</string>
+    <string name="enterSinger">Enter singer\'s name here</string>
+    <string name="year">Year</string>
+    <string name="enterYear">Enter year of release here</string>
+    <string name="stars">Stars</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="btnInsert">INSERT</string>
+    <string name="btnShowList">SHOW LIST</string>
+    <string name="back">BACK</string>
+</resources>
