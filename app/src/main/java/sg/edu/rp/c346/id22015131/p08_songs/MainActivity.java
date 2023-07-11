@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         btnShowList = findViewById(R.id.btnShowList);
 
         btnInsert.setOnClickListener(v -> {
-            boolean isChecked = false;
-            if (isChecked == true) {
                 String title = etTitle.getText().toString();
                 String singer = etSinger.getText().toString();
                 int year = Integer.parseInt(etYear.getText().toString());
@@ -56,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 etSinger.getText().clear();
                 etYear.getText().clear();
                 rgStar.clearCheck();
-            }
         });
 
         btnShowList.setOnClickListener(v -> {
