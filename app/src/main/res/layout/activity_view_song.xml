@@ -5,6 +5,12 @@
     android:orientation="vertical">
 
 
+    <Button
+        android:id="@+id/btnShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/showAllSong" />
+
     <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"

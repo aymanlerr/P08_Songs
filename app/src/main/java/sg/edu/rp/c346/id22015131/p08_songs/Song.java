@@ -2,7 +2,9 @@ package sg.edu.rp.c346.id22015131.p08_songs;
 
 import androidx.annotation.NonNull;
 
-public class Song {
+import java.io.Serializable;
+
+public class Song implements Serializable {
     private int id;
     private String title;
     private String singers;
@@ -28,6 +30,13 @@ public class Song {
     public String toString() {
         String output = String.format("Song Title: %s\nArtist: %s\nReleased Year:%d\nRating: %d/5", title, singers, year, stars );
         return output;
+    }
+
+    public void setSongContent(String title, String singer, int year, int stars) {
+        this.title = title;
+        this.singers = singer;
+        this.year = year;
+        this.stars = stars;
     }
 
 }

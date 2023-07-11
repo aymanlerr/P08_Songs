@@ -60,7 +60,7 @@
         android:text="@string/stars" />
 
     <RadioGroup
-        android:id="@+id/rgStar"
+        android:id="@+id/rgNewStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -106,14 +106,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/btnInsert" />
+            android:text="@string/btnUpdate" />
 
         <Button
-            android:id="@+id/btnShowList"
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/btnShowList" />
+            android:text="@string/btnDelete" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCancel" />
 
 </LinearLayout>
