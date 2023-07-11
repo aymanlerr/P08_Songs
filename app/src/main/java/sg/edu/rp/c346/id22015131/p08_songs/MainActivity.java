@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         rgStar = findViewById(R.id.rgStar);
         btnInsert = findViewById(R.id.btnUpdate);
         btnShowList = findViewById(R.id.btnShowList);
-        lv = findViewById(R.id.lv);
 
         btnInsert.setOnClickListener(v -> {
             boolean isChecked = false;
