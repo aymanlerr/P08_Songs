@@ -15,7 +15,8 @@
     <string name="btnInsert">INSERT</string>
     <string name="btnShowList">SHOW LIST</string>
     <string name="back">BACK</string>
-    <string name="showAllSong">SHOW ALL SONGS WITH 5 STARS</string>
+    <string name="show5StarSong">SHOW ALL SONGS WITH 5 STARS</string>
+    <string name="showAllSong">SHOW ALL SONGS</string>
     <string name="btnUpdate">UPDATE</string>
     <string name="btnDelete">DELETE</string>
     <string name="btnCancel">CANCEL</string>
