@@ -44,11 +44,6 @@ public class viewSong extends AppCompatActivity {
         db.close();
         lv.setAdapter(aaSongs);
 
-        //yearList.add("2023");
-        //yearList.add("2022");
-        //yearList.add("2021");
-        //yearList.add("2020");
-
         for (int a = 0; a < songs.size(); a ++) {
             if (!yearList.contains(Integer.toString(songs.get(a).getYear()))) {
                 yearList.add(Integer.toString(songs.get(a).getYear()));
