@@ -28,7 +28,8 @@ public class Song implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        String output = String.format("Song Title: %s\nArtist: %s\nReleased Year:%d\nRating: %d/5", title, singers, year, stars );
+        String strStar = "*".repeat(stars);
+        String output = String.format("Song Title: %s\nArtist: %s\nReleased Year: %d\nRating: %s", title, singers, year, strStar );
         return output;
     }
 
