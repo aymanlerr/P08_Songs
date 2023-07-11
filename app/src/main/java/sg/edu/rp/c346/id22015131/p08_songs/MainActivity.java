@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
             DBHelper db = new DBHelper(MainActivity.this);
             db.insertSong(title, singer, year,star);
+            etTitle.getText().clear();
+            etSinger.getText().clear();
+            etYear.getText().clear();
+            rgStar.clearCheck();
         });
 
         btnShowList.setOnClickListener(v -> {
