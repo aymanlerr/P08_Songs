@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btnShowList = findViewById(R.id.btnShowList);
 
         btnInsert.setOnClickListener(v -> {
+            if (validate()) {
                 String title = etTitle.getText().toString();
                 String singer = etSinger.getText().toString();
                 int year = Integer.parseInt(etYear.getText().toString());
@@ -52,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
                 etSinger.getText().clear();
                 etYear.getText().clear();
                 rgStar.clearCheck();
+                Toast.makeText(getApplicationContext(), "Song inserted", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Enter empty field(s)", Toast.LENGTH_SHORT).show();
+            }
         });
 
         btnShowList.setOnClickListener(v -> {
@@ -59,5 +65,42 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+    }
+
+    private boolean validate() {
+        String title = etTitle.getText().toString();
+        String singer = etSinger.getText().toString();
+        String year = etYear.getText().toString();
+
+
+        if (title.isEmpty() && singer.isEmpty() && year.isEmpty()) {
+            etTitle.setError("Enter title");
+            etSinger.setError("Enter Singer name");
+            etYear.setError("Enter year");
+            return false;
+        } else if (singer.isEmpty() && title.isEmpty()) {
+            etTitle.setError("Enter title");
+            etSinger.setError("Enter Singer name");
+            return false;
+        } else if (year.isEmpty() && title.isEmpty()) {
+            etYear.setError("Enter year");
+            etTitle.setError("Enter title");
+            return false;
+        } else if (singer.isEmpty() && year.isEmpty()) {
+            etSinger.setError("Enter Singer name");
+            etYear.setError("Enter year");
+            return false;
+        } else if (title.isEmpty()) {
+            etTitle.setError("Enter title");
+            return false;
+        } else if (singer.isEmpty()) {
+            etSinger.setError("Enter Singer name");
+            return false;
+        } else if (year.isEmpty()) {
+            etYear.setError("Enter year");
+            return false;
+        } else {
+            return true;
+        }
     }
 }

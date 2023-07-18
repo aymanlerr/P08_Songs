@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -61,9 +62,10 @@ public class EditActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(v -> {
             DBHelper db = new DBHelper(EditActivity.this);
             db.deleteSong(data.getId());
-            finish();
             Intent intent = new Intent(EditActivity.this, viewSong.class);
             startActivity(intent);
+            finish();
+            Toast.makeText(getApplicationContext(), "Song deleted", Toast.LENGTH_SHORT).show();
         });
 
         btnUpdate.setOnClickListener(v -> {
@@ -93,6 +95,7 @@ public class EditActivity extends AppCompatActivity {
             finish();
             Intent intent = new Intent(EditActivity.this, viewSong.class);
             startActivity(intent);
+            Toast.makeText(getApplicationContext(), "Song updated", Toast.LENGTH_SHORT).show();
         });
 
     }

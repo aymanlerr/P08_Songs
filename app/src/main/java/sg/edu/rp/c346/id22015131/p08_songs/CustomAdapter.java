@@ -16,6 +16,7 @@ public class CustomAdapter extends ArrayAdapter {
     Context parent_context;
     int layout_id;
     ArrayList<Song> songList;
+    TextView tvSong, tvYear, tvStar, tvArtist;
 
     public CustomAdapter(@NonNull Context context, int resource, ArrayList<Song> objects) {
         super(context, resource, objects);
@@ -28,9 +29,15 @@ public class CustomAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) parent_context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(layout_id, parent, false);
-        TextView tvSong = rowView.findViewById(R.id.textViewSong);
+        tvSong = rowView.findViewById(R.id.song);
+        tvYear = rowView.findViewById(R.id.year);
+        tvStar = rowView.findViewById(R.id.star);
+        tvArtist = rowView.findViewById(R.id.artist);
         Song currentSong = songList.get(position);
-        tvSong.setText(currentSong.toString());
+        tvSong.setText(currentSong.getTitle());
+        tvYear.setText(Integer.toString(currentSong.getYear()));
+        tvStar.setText("  "+ " *".repeat(currentSong.getStars()));
+        tvArtist.setText(currentSong.getSingers());
         return rowView;
     }
 }

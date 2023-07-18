@@ -5,11 +5,38 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewSong"
+        android:id="@+id/song"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tvName"
-        android:textColor="#000000" />
+        android:textColor="#673AB7" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#525252" />
+
+        <TextView
+            android:id="@+id/star"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#F34AFF" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#4AA8B4" />
 
 </LinearLayout>

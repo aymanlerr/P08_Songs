@@ -56,9 +56,9 @@ public class viewSong extends AppCompatActivity {
 
 
         btnBack.setOnClickListener(v -> {
-            finish();
             Intent intent = new Intent(viewSong.this, MainActivity.class);
             startActivity(intent);
+            finish();
         });
 
 
