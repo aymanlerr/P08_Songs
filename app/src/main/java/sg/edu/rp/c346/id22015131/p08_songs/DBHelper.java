@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Song> getSongs() {
-        ArrayList<Song> songs = new ArrayList<Song>();
+        ArrayList<Song> songs = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR, COLUMN_STARS};
         Cursor cursor = db.query(TABLE_NAME, columns, null, null, null, null, COLUMN_SINGERS, null);
@@ -79,7 +79,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Song> getFilteredSongs() {
-        ArrayList<Song> songs = new ArrayList<Song>();
+        ArrayList<Song> songs = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR, COLUMN_STARS};
         String condition = COLUMN_STARS + " = ?";
@@ -103,7 +103,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Song> getSongsByYear(int year) {
-        ArrayList<Song> songs = new ArrayList<Song>();
+        ArrayList<Song> songs = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR, COLUMN_STARS};
         String condition = COLUMN_YEAR + " = ?";

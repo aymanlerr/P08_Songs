@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,7 +34,7 @@ public class viewSong extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
         btnShowSong = findViewById(R.id.btnShow);
         spinner1 = findViewById(R.id.spinner1);
-        songList = new ArrayList<Song>();
+        songList = new ArrayList<>();
         yearList = new ArrayList<>();
 
         DBHelper db = new DBHelper(getApplicationContext());

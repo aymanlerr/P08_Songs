@@ -56,9 +56,7 @@ public class EditActivity extends AppCompatActivity {
             star5.setChecked(true);
         }
 
-        btnCancel.setOnClickListener(v -> {
-            finish();
-        });
+        btnCancel.setOnClickListener(v -> finish());
 
         btnDelete.setOnClickListener(v -> {
             DBHelper db = new DBHelper(EditActivity.this);

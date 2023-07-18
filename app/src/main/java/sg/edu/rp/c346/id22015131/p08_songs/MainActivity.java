@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     EditText etTitle, etSinger, etYear;
     RadioGroup rgStar;
     Button btnInsert, btnShowList;
-    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
