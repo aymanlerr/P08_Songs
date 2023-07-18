@@ -20,4 +20,6 @@
     <string name="btnUpdate">UPDATE</string>
     <string name="btnDelete">DELETE</string>
     <string name="btnCancel">CANCEL</string>
+    <string name="tvName">Medium Text</string>
+    <string name="tvDesc">TextView</string>
 </resources>

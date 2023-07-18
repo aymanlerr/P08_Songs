@@ -28,9 +28,7 @@ public class Song implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        String strStar = "*".repeat(stars);
-        String output = String.format("%s\n%s - %d\n%s", title, singers, year, strStar );
-        return output;
+        return String.format("%s\n%d   %s\n%s", title, year, "*".repeat(stars), singers);
     }
 
     public void setSongContent(String title, String singer, int year, int stars) {

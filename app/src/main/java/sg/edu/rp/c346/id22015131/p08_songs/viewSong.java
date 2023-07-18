@@ -25,6 +25,7 @@ public class viewSong extends AppCompatActivity {
     ArrayList<String> yearList;
     ArrayAdapter<String> aaSpinner;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +40,11 @@ public class viewSong extends AppCompatActivity {
 
         DBHelper db = new DBHelper(getApplicationContext());
         ArrayList<Song> songs = db.getSongs();
-
-        ArrayAdapter aaSongs = new ArrayAdapter(this, android.R.layout.simple_list_item_1, songs);
         db.close();
-        lv.setAdapter(aaSongs);
+
+        CustomAdapter adapter = new CustomAdapter(this, R.layout.row, songs);
+        lv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         for (int a = 0; a < songs.size(); a ++) {
             if (!yearList.contains(Integer.toString(songs.get(a).getYear()))) {
@@ -65,12 +67,13 @@ public class viewSong extends AppCompatActivity {
             boolean isChecked = btnShowSong.isChecked();
             if (isChecked) {
             ArrayList<Song> filteredSongs = db.getFilteredSongs();
-            ArrayAdapter aaFilteredSongs = new ArrayAdapter(this, android.R.layout.simple_list_item_1, filteredSongs);
+            CustomAdapter aaFilteredSongs = new CustomAdapter(this, R.layout.row, filteredSongs);
             db.close();
             lv.setAdapter(aaFilteredSongs);
             aaFilteredSongs.notifyDataSetChanged();
         } else {
-                lv.setAdapter(aaSongs);
+                lv.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -86,7 +89,7 @@ public class viewSong extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String yearSelected = parent.getItemAtPosition(position).toString();
                 ArrayList<Song> songsByYear = db.getSongsByYear(Integer.parseInt(yearSelected));
-                ArrayAdapter aaSongSpinner = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, songsByYear);
+                CustomAdapter aaSongSpinner = new CustomAdapter(getApplicationContext(), R.layout.row, songsByYear);
                 db.close();
                 lv.setAdapter(aaSongSpinner);
                 aaSongSpinner.notifyDataSetChanged();
